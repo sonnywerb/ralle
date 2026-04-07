@@ -37,7 +37,7 @@ Write-Host "==> Creating installer with jpackage..." -ForegroundColor Cyan
 jpackage `
     --type exe `
     --name RALL-E `
-    --app-version "1.1.0" `
+    --app-version "1.0.1" `
     --input build `
     --main-jar Ralle.jar `
     --main-class main.Ralle `
