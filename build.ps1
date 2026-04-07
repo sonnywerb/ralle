@@ -44,7 +44,9 @@ jpackage `
     --runtime-image $RUNTIME `
     --icon "$SRC\resources\icon.ico" `
     --dest $DIST `
+    --win-per-user-install `
     --win-shortcut `
+    --win-shortcut-prompt `
     --win-menu
 
 Write-Host "==> Done! Installer: $DIST" -ForegroundColor Green
