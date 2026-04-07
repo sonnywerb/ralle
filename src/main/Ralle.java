@@ -23,6 +23,7 @@ public class Ralle {
 
         tray.add(trayIcon);
 
+        System.out.println("Starting RALL-E.");
         while (true) {
             Point currentPosition = MouseInfo.getPointerInfo().getLocation();
             int x = currentPosition.x;
@@ -35,12 +36,14 @@ public class Ralle {
                 break;
             }
             if (currentHour == 12) {
+                System.out.println("It's noon! RALL-E is taking a break.");
                 TimeUnit.MINUTES.sleep(30);
             }
             robot.mouseMove(x + 1, y + 1);
             TimeUnit.MINUTES.sleep(4);
         }
 
+        System.out.println("Ending RALL-E.");
         System.exit(0);
     }
 }
