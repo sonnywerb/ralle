@@ -12,18 +12,17 @@ public class Ralle {
 
         Image image = Toolkit.getDefaultToolkit().getImage(Ralle.class.getResource("/icon.png"));
 
-        TrayIcon trayIcon = new TrayIcon(image, "RALLE is running");
+        TrayIcon trayIcon = new TrayIcon(image, "RALL-E is running");
         trayIcon.setImageAutoSize(true);
 
         PopupMenu popup = new PopupMenu();
-        MenuItem exitItem = new MenuItem("Stop RALLE");
+        MenuItem exitItem = new MenuItem("Stop RALL-E");
         exitItem.addActionListener(e -> System.exit(0));
         popup.add(exitItem);
         trayIcon.setPopupMenu(popup);
 
         tray.add(trayIcon);
 
-        System.out.println("Starting RALLE.");
         while (true) {
             Point currentPosition = MouseInfo.getPointerInfo().getLocation();
             int x = currentPosition.x;
@@ -36,14 +35,12 @@ public class Ralle {
                 break;
             }
             if (currentHour == 12) {
-                System.out.println("It's noon! Taking a break.");
                 TimeUnit.MINUTES.sleep(30);
             }
             robot.mouseMove(x + 1, y + 1);
             TimeUnit.MINUTES.sleep(4);
         }
 
-        System.out.println("Ending RALLE.");
         System.exit(0);
     }
 }
