@@ -1,13 +1,16 @@
 $ErrorActionPreference = "Stop"
 
-$SRC     = "src\main"
-$OUT     = "build\classes"
-$JAR     = "build\Ralle.jar"
+$SRC = "src\main"
+$OUT = "build\classes"
+$JAR = "build\Ralle.jar"
 $RUNTIME = "build\runtime"
-$DIST    = "build\dist"
+$DIST = "build\dist"
 
 Write-Host "==> Cleaning build directory..." -ForegroundColor Cyan
-if (Test-Path "build") { Remove-Item -Recurse -Force "build" }
+if (Test-Path "build")
+{
+    Remove-Item -Recurse -Force "build"
+}
 New-Item -ItemType Directory -Force -Path $OUT | Out-Null
 
 Write-Host "==> Compiling..." -ForegroundColor Cyan
@@ -31,13 +34,14 @@ jlink `
     --no-man-pages `
     --compress=2
 
-Write-Host "==> Runtime size: $('{0:N1} MB' -f ((Get-ChildItem $RUNTIME -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB))"
+Write-Host "==> Runtime size: $( '{0:N1} MB' -f ((Get-ChildItem $RUNTIME -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB) )"
 
 Write-Host "==> Creating installer with jpackage..." -ForegroundColor Cyan
 jpackage `
     --type exe `
     --name RALL-E `
-    --app-version "1.0.1" `
+    --app-version "1.1.0" `
+    --win-upgrade-uuid "a02f3a4b-aa50-4a48-bf46-8d19fa8e07c4" `
     --input build `
     --main-jar Ralle.jar `
     --main-class main.Ralle `
