@@ -1,4 +1,4 @@
-RALL-E
+RALL-E: 
 Robot Activity Loop for Live Engagement
 
 ## Installation
