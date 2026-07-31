@@ -1,5 +1,5 @@
 RALL-E: 
-Ready And Looking Live Engine
+Ready And Looking LivE
 
 ## Installation
 1. Download latest version of the installer .exe from Releases.
