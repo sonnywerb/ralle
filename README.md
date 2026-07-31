@@ -1,5 +1,5 @@
 RALL-E: 
-Robot Activity Loop for Live Engagement
+Ready And Looking Live Engine
 
 ## Installation
 1. Download latest version of the installer .exe from Releases.
