@@ -1,6 +1,3 @@
-RALLE:
-Ready And Looking LivE
-
 Ralle is a lightweight Windows tray app that keeps your PC active so you don't have to think about it.
 
 ## Installation
