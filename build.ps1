@@ -14,11 +14,19 @@ if (Test-Path "build")
 New-Item -ItemType Directory -Force -Path $OUT | Out-Null
 
 Write-Host "==> Compiling..." -ForegroundColor Cyan
-javac -d $OUT "$SRC\Ralle.java"
+javac -d $OUT -cp "lib\jna-5.14.0.jar;lib\jna-platform-5.14.0.jar" "$SRC\*.java"
 
 Write-Host "==> Packaging JAR..." -ForegroundColor Cyan
 # Copy resources into the classes output so they end up in the JAR
 Copy-Item -Recurse -Force "$SRC\resources\*" $OUT
+
+# Merge JNA's classes into the output so they end up bundled in the single JAR
+$RepoRoot = Get-Location
+Push-Location $OUT
+jar --extract --file (Join-Path $RepoRoot "lib\jna-5.14.0.jar")
+jar --extract --file (Join-Path $RepoRoot "lib\jna-platform-5.14.0.jar")
+Pop-Location
+
 jar --create --file $JAR --main-class main.Ralle -C $OUT .
 
 Write-Host "==> Detecting required modules..." -ForegroundColor Cyan
@@ -40,7 +48,7 @@ Write-Host "==> Creating installer with jpackage..." -ForegroundColor Cyan
 jpackage `
     --type exe `
     --name RALL-E `
-    --app-version "1.1.0" `
+    --app-version "1.2.0" `
     --win-upgrade-uuid "a02f3a4b-aa50-4a48-bf46-8d19fa8e07c4" `
     --input build `
     --main-jar Ralle.jar `
