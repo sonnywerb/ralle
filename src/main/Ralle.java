@@ -109,7 +109,7 @@ public class Ralle {
             } else {
                 trayIcon.setToolTip("RALLE - Paused (you're active)");
             }
-            TimeUnit.SECONDS.sleep(175);
+            TimeUnit.SECONDS.sleep(270);
         }
         KeepAwake.disable();
         prefs.putInt("endHour", END_HOUR);
