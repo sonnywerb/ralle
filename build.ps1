@@ -47,7 +47,7 @@ Write-Host "==> Runtime size: $( '{0:N1} MB' -f ((Get-ChildItem $RUNTIME -Recurs
 Write-Host "==> Creating installer with jpackage..." -ForegroundColor Cyan
 jpackage `
     --type exe `
-    --name RALL-E `
+    --name Ralle `
     --app-version "1.2.0" `
     --vendor "EJC" `
     --win-upgrade-uuid "a02f3a4b-aa50-4a48-bf46-8d19fa8e07c4" `

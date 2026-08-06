@@ -25,7 +25,7 @@ public class Ralle {
         Preferences prefs = Preferences.userNodeForPackage(Ralle.class);
 
         Image image = Toolkit.getDefaultToolkit().getImage(Ralle.class.getResource("/icon.png"));
-        TrayIcon trayIcon = new TrayIcon(image, "RALL-E is running");
+        TrayIcon trayIcon = new TrayIcon(image, "RALLE is running");
         trayIcon.setImageAutoSize(true);
 
         PopupMenu popup = new PopupMenu();
@@ -90,24 +90,24 @@ public class Ralle {
             int currentHour = currentTime.getHour();
 
             if (currentHour >= endHour.get()) {
-                trayIcon.setToolTip("RALL-E - Stopped for the day");
+                trayIcon.setToolTip("RALLE - Stopped for the day");
                 break;
             }
 
-            // if lunchMode is activated -> RALL-E will take a break
+            // if lunchMode is activated -> RALLE will take a break
             if (currentHour == 12 && lunchMode.get() && !tookLunchBreak) {
                 tookLunchBreak = true;
                 LocalTime breakEnd = currentTime.plusMinutes(lunchDurationMinutes.get());
                 trayIcon.setToolTip(
-                        "RALL-E - On Lunch Break until " + breakEnd.format(DateTimeFormatter.ofPattern("h:mm a")));
+                        "RALLE - On Lunch Break until " + breakEnd.format(DateTimeFormatter.ofPattern("h:mm a")));
                 TimeUnit.MINUTES.sleep(lunchDurationMinutes.get());
             }
 
             if (!workMode.get() || IdleTime.getIdleMillis() > 120_000) {
                 robot.mouseMove(x + 1, y + 1);
-                trayIcon.setToolTip("RALL-E - Active");
+                trayIcon.setToolTip("RALLE - Active");
             } else {
-                trayIcon.setToolTip("RALL-E - Paused (you're active)");
+                trayIcon.setToolTip("RALLE - Paused (you're active)");
             }
             TimeUnit.SECONDS.sleep(175);
         }
