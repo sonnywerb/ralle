@@ -49,6 +49,7 @@ jpackage `
     --type exe `
     --name RALL-E `
     --app-version "1.2.0" `
+    --vendor "EJC" `
     --win-upgrade-uuid "a02f3a4b-aa50-4a48-bf46-8d19fa8e07c4" `
     --input build `
     --main-jar Ralle.jar `
