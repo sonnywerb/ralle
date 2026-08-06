@@ -1,14 +1,14 @@
 RALLE:
 Ready And Looking LivE
 
-RALLE is a lightweight Windows tray app that keeps your PC active so you don't have to think about it.
+Ralle is a lightweight Windows tray app that keeps your PC active so you don't have to think about it.
 
 ## Installation
 
 1. Download latest version of the installer `.exe` from Releases.
 2. After downloading, run the installer
 3. Select whether you want to create start menu/desktop shortcut
-4. RALLE will be installed in `C:\Users\<user>\AppData\Local\RALLE`
+4. Ralle will be installed in `C:\Users\<user>\AppData\Local\RALLE`
 
 > **Note:** if you have a version older than 1.1.0 already installed, uninstall it first
 > (Settings > Apps > RALLE > Uninstall) before installing the new version. Versions
@@ -26,7 +26,7 @@ RALLE is a lightweight Windows tray app that keeps your PC active so you don't h
       instead of nudging constantly, so it doesn't interfere while you're actively working
     - **Lunch Mode** - take a break around noon instead of nudging the mouse
     - **Lunch Mode Duration** - how long the lunch break lasts (15/30/45/60 min)
-    - **End Time** - what time RALLE stops for the day (2:00 PM - 5:00 PM)
+    - **End Time** - what time Ralle stops for the day (2:00 PM - 5:00 PM)
     - **Exit** - stop the program
 - Settings are remembered between runs
 
