@@ -11,7 +11,7 @@ Ralle is a lightweight Windows tray app that keeps your PC active so you don't h
 4. Ralle will be installed in `C:\Users\<user>\AppData\Local\RALLE`
 
 > **Note:** if you have a version older than 1.1.0 already installed, uninstall it first
-> (Settings > Apps > RALLE > Uninstall) before installing the new version. Versions
+> (Settings > Apps > Ralle > Uninstall) before installing the new version. Versions
 > before 1.1.0 don't share the upgrade identifier used by newer installers, so the
 > new installer can't automatically detect/replace them. From 1.1.0 onward, upgrades
 > will be detected and applied automatically.
